@@ -207,9 +207,12 @@ console.log(data,"data")
                             <div>
                                 <span className="text-sm font-bold text-gray-600">Available: {isConnected ? <span className="mt-1 text-sm">{stakingBalanceData ? Number(formatUnits(stakingBalanceData, 18)).toFixed(4) : '0.0000'} ETH</span> : <span className="mt-1 text-sm font-bold text-white">N/A</span>} </span>
                             </div>
-                            <button className="w-full h-10 bg-orange-800 text-white font-bold rounded-md mt-4 cursor-pointer"
+                            {isConnected ? <button className="w-full h-10 bg-orange-800 text-white font-bold rounded-md mt-4 cursor-pointer"
                                 disabled={unstakingLoading}
-                                onClick={handleUnstake}>{unstakingLoading ? 'Unstaking...' : 'Unstake'}</button>
+                                onClick={handleUnstake}>{unstakingLoading ? 'Unstaking...' : 'Unstake'}</button> : <button className="w-full h-10 bg-gray-400 text-white font-bold rounded-md mt-4 cursor-not-allowed"
+                                disabled
+                            >{'Unstake'}
+                            </button>}
                         </div>
                         {/* 第2列*/}
                         <div className="bg-[#0b0f1a] rounded-lg p-2 flex flex-col">
@@ -257,9 +260,12 @@ console.log(data,"data")
                                 />
                                 <span className="px-3 text font-bold text-gray-400">ETH</span>
                             </div>
-                            <button className="w-full h-10 bg-blue-800 text-white font-bold rounded-md mt-4 cursor-pointer"
+                            {isConnected ? <button className="w-full h-10 bg-blue-800 text-white font-bold rounded-md mt-4 cursor-pointer"
                                 disabled={withdrawLoading}
-                                onClick={handleWithdraw}>{withdrawLoading ? 'Withdrawing...' : 'Withdraw'}</button>
+                                onClick={handleWithdraw}>{withdrawLoading ? 'Withdrawing...' : 'Withdraw'}</button> : <button className="w-full h-10 bg-gray-400 text-white font-bold rounded-md mt-4 cursor-not-allowed"
+                                disabled
+                            >{'Withdraw'}
+                            </button>}
                         </div>
                         {/* 第2列*/}
                         <div className="bg-[#0b0f1a] rounded-lg p-2 flex flex-col">

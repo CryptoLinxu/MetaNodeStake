@@ -3,7 +3,7 @@
  * @Author: linxu devinlin9679@gmail.com
  * @Date: 2025-09-26 10:08:51
  * @LastEditors: linxu devinlin9679@gmail.com
- * @LastEditTime: 2025-09-26 21:42:30
+ * @LastEditTime: 2025-09-29 16:45:01
  */
 'use client'
 
@@ -12,6 +12,8 @@ import MetaNodeStakeABI from '../../abi/MetaNodeStake.json';
 import { Wallet, CircleDollarSign, Lock, HandCoins, CircleCheckBig, Info } from 'lucide-react';
 import { formatUnits, parseEther } from 'viem';
 import { useEffect, useState } from "react";
+import { WalletConnect } from '../RainbowKit';
+
 
 export default function UserStake() {
 
@@ -213,7 +215,7 @@ export default function UserStake() {
                             <span className="text-sm font-bold text-gray-400">Amount To Stake</span>
                             <div className="flex items-center rounded-md bg-gray-900 border border-gray-800 mt-2">
                                 <input
-                                    className="flex-1 h-10 bg-transparent text text-white font-bold px-4 border-none focus:ring-0"
+                                    className="flex-1 h-10 bg-transparent text-xl text-white font-bold px-4 border-none focus:ring-0"
                                     type="text"
                                     placeholder="0.0000"
                                     value={amount || ""}
@@ -224,9 +226,13 @@ export default function UserStake() {
                             <div>
                                 <span className="text-sm font-bold text-gray-600">Available: {isConnected ? <span className="mt-1 text-sm">{balanceData ? Number(formatUnits(balanceData.value, 18)).toFixed(4) : '0.0000'} ETH</span> : <span className="mt-1 text-sm font-bold text-white">N/A</span>} </span>
                             </div>
-                            <button className="w-full h-10 bg-green-800 text-white font-bold rounded-md mt-4 cursor-pointer"
+                            {isConnected ? <button className="w-full h-10 bg-green-800 text-white font-bold rounded-md mt-4 cursor-pointer"
                                 disabled={loading}
-                                onClick={handleStake}>{loading ? 'Staking...' : 'Stake'}</button>
+                                onClick={handleStake}>{loading ? 'Staking...' : 'Stake'}
+                            </button> : <button className="w-full h-10 bg-gray-400 text-white font-bold rounded-md mt-4 cursor-not-allowed"
+                                disabled
+                            >{'Stake'}
+                            </button>}
                         </div>
                         {/* 第2列*/}
                         <div className="bg-[#0b0f1a] rounded-lg p-2 flex flex-col">
@@ -275,9 +281,12 @@ export default function UserStake() {
                                 />
                                 <span className="px-3 text font-bold text-gray-400">MNT</span>
                             </div>
-                            <button className="w-full h-10 bg-[#ee2b69] text-white font-bold rounded-md mt-4 cursor-pointer"
+                            {isConnected ? <button className="w-full h-10 bg-[#ee2b69] text-white font-bold rounded-md mt-4 cursor-pointer"
                                 disabled={claimLoading}
-                                onClick={handleClaim}>{claimLoading ? 'Claiming...' : 'Claim'}</button>
+                                onClick={handleClaim}>{claimLoading ? 'Claiming...' : 'Claim'}</button> : <button className="w-full h-10 bg-gray-400 text-white font-bold rounded-md mt-4 cursor-not-allowed"
+                                disabled
+                            >{'Claim'}
+                            </button>}
                         </div>
                         {/* 第2列*/}
                         <div className="bg-[#0b0f1a] rounded-lg p-2 flex flex-col">
