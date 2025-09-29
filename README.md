@@ -3,7 +3,7 @@
  * @Author: linxu devinlin9679@gmail.com
  * @Date: 2025-09-15 19:15:12
  * @LastEditors: linxu devinlin9679@gmail.com
- * @LastEditTime: 2025-09-26 16:59:02
+ * @LastEditTime: 2025-09-29 17:15:57
 -->
 ## 项目描述
 
@@ -52,6 +52,16 @@ npm install @rainbow-me/rainbowkit wagmi viem@2.x @tanstack/react-query ethers
 ```bash
 npm run dev
 ```
+
+### 6、系统截图
+- Hmoe页面：查看Stake平台信息
+![alt text](public/bccb6384-8adf-4873-9267-d92622eb7e90.png) 
+
+- Stake页面：Stake and Claim操作页
+![alt text](public/417a46bb-9bbd-43b7-86e9-eaa37eaa7034.png) 
+
+- Withdraw页面：Unstake and Withdraw操作页
+![alt text](public/d6738eb5-b370-450b-9006-b1f1a56076fc.png)
 
 ### 6、注意事项
 - 当执行unstake操作后，需经过10个区块才能进入待提取金额中，才能withdraw
