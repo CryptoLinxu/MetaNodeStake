@@ -3,7 +3,7 @@
  * @Author: linxu devinlin9679@gmail.com
  * @Date: 2025-09-15 19:15:12
  * @LastEditors: linxu devinlin9679@gmail.com
- * @LastEditTime: 2025-09-29 17:18:35
+ * @LastEditTime: 2025-09-29 17:25:12
 -->
 ## 项目描述
 
@@ -37,11 +37,16 @@
   - claim: 领取质押奖励
   - 读取Pool信息
   - 读取user的质押信息
-- ✅使用Wagmi实现合约事件监听
+- ⏹️使用Wagmi实现合约事件监听
   - 监听Stake事件
   - 监听Unstake事件
   - 监听Withdraw事件
   - 监听Claim事件
+- ⏹️统计池子总质押信息
+  - ✅总质押数
+  - 总请求数
+  - 总可提取数
+  - 总锁定数
 
 ### 4、安装依赖
 ```bash
