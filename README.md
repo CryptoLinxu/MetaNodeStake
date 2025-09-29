@@ -3,7 +3,7 @@
  * @Author: linxu devinlin9679@gmail.com
  * @Date: 2025-09-15 19:15:12
  * @LastEditors: linxu devinlin9679@gmail.com
- * @LastEditTime: 2025-09-29 17:15:57
+ * @LastEditTime: 2025-09-29 17:18:35
 -->
 ## 项目描述
 
@@ -63,7 +63,7 @@ npm run dev
 - Withdraw页面：Unstake and Withdraw操作页
 ![alt text](public/d6738eb5-b370-450b-9006-b1f1a56076fc.png)
 
-### 6、注意事项
+### 7、注意事项
 - 当执行unstake操作后，需经过10个区块才能进入待提取金额中，才能withdraw
 - 执行unstake操作后，执行withdrawAmount操作，可以发现`requestAmount`是unstake操作的所以请求解压金额
 - `requestAmount`后，还有`pendingWithdrawAmount`，表示已经经过了unstake操作后10个区块，可以马上withdraw的金额
